@@ -3,9 +3,17 @@
 import React from 'react';
 import { Mail, Send, CheckCircle2 } from 'lucide-react';
 
-const Contact = () => {
+const Contact = ({ 
+  className = "", 
+  showTitle = true,
+  noPadding = false 
+}: { 
+  className?: string, 
+  showTitle?: boolean,
+  noPadding?: boolean 
+}) => {
   return (
-    <section id="contact" className="py-24 bg-black/50">
+    <section id="contact" className={`${noPadding ? '' : 'py-24'} ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="glass rounded-[3rem] overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
