@@ -45,7 +45,7 @@ const ContactPage = () => {
         </div>
 
         {/* 3. Form Section - OVERLAPPING THE MAP */}
-        <div className="max-w-5xl mx-auto px-4 relative -mt-40 z-99">
+        <div className="max-w-5xl mx-auto px-4 relative -mt-40 z-20">
           <div className="bg-black/80 rounded-[3.5rem] overflow-hidden ">
             <Contact noPadding showTitle={false} />
           </div>
