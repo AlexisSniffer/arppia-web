@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'Arppia | Soluciones Digitales, E-commerce & IA',
-  description: 'Agencia de desarrollo de software especializada en E-commerce, Apps móviles, APIs, Automatización con n8n y Agentes de IA.'
+  description:
+    'Agencia de desarrollo de software especializada en E-commerce, Apps móviles, APIs, Automatización con n8n y Agentes de IA.'
 }
 
 export default function RootLayout({

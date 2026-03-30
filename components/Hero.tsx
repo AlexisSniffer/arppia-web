@@ -1,6 +1,6 @@
-import React from 'react';
-import { ChevronRight, ArrowRight, Zap, Shield, Sparkles } from 'lucide-react';
-import Link from 'next/link';
+import React from 'react'
+import { ChevronRight, ArrowRight, Zap, Shield, Sparkles } from 'lucide-react'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -14,7 +14,9 @@ const Hero = () => {
         <div className="text-center">
           <div className="inline-flex items-center space-x-2 glass px-4 py-2 rounded-full mb-8 animate-in fade-in slide-in-from-bottom duration-700">
             <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-sm font-semibold text-gray-300">Impulsando la nueva era digital</span>
+            <span className="text-sm font-semibold text-gray-300">
+              Impulsando la nueva era digital
+            </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight animate-in fade-in slide-in-from-bottom duration-1000">
@@ -23,8 +25,9 @@ const Hero = () => {
           </h1>
 
           <p className="max-w-2xl mx-auto text-xl text-gray-400 mb-10 animate-in fade-in slide-in-from-bottom duration-1200">
-            E-commerce de alto rendimiento, Apps móviles intuitivas y automatización con IA.
-            Construimos el futuro de tu negocio hoy mismo.
+            E-commerce de alto rendimiento, Apps móviles intuitivas y
+            automatización con IA. Construimos el futuro de tu negocio hoy
+            mismo.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 animate-in fade-in slide-in-from-bottom duration-1500">
@@ -47,24 +50,43 @@ const Hero = () => {
         {/* Feature Highlights */}
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { icon: <Zap className="w-6 h-6 text-yellow-400" />, title: 'Velocidad', desc: 'Soluciones optimizadas para el máximo rendimiento.' },
-            { icon: <Shield className="w-6 h-6 text-green-400" />, title: 'Escalabilidad', desc: 'Sistemas que crecen al ritmo de tu empresa.' },
-            { icon: <Sparkles className="w-6 h-6 text-purple-400" />, title: 'Innovación', desc: 'Implementación de Agentes IA y automatización avanzada.' }
+            {
+              icon: <Zap className="w-6 h-6 text-yellow-400" />,
+              title: 'Velocidad',
+              desc: 'Soluciones optimizadas para el máximo rendimiento.'
+            },
+            {
+              icon: <Shield className="w-6 h-6 text-green-400" />,
+              title: 'Escalabilidad',
+              desc: 'Sistemas que crecen al ritmo de tu empresa.'
+            },
+            {
+              icon: <Sparkles className="w-6 h-6 text-purple-400" />,
+              title: 'Innovación',
+              desc: 'Implementación de Agentes IA y automatización avanzada.'
+            }
           ].map((feature, idx) => (
-            <div key={idx} className="glass p-6 rounded-2xl flex items-start space-x-4 hover:border-primary/50 transition-colors group">
+            <div
+              key={idx}
+              className="glass p-6 rounded-2xl flex items-start space-x-4 hover:border-primary/50 transition-colors group"
+            >
               <div className="bg-white/5 p-3 rounded-xl group-hover:scale-110 transition-transform">
                 {feature.icon}
               </div>
               <div>
-                <h3 className="font-bold text-lg text-white mb-1">{feature.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
+                <h3 className="font-bold text-lg text-white mb-1">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {feature.desc}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

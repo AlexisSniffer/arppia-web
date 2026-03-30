@@ -1,22 +1,31 @@
-import { ShoppingBag, Tablet, Cpu, Zap, BrainCircuit, LucideIcon } from 'lucide-react';
+import {
+  ShoppingBag,
+  Tablet,
+  Cpu,
+  Zap,
+  BrainCircuit,
+  LucideIcon
+} from 'lucide-react'
 
 export interface Service {
-  id: string;
-  title: string;
-  description: string;
-  longDescription: string;
-  Icon: LucideIcon;
-  features: string[];
-  benefits: string[];
-  tech: string[];
+  id: string
+  title: string
+  description: string
+  longDescription: string
+  Icon: LucideIcon
+  features: string[]
+  benefits: string[]
+  tech: string[]
 }
 
 export const servicesData: Service[] = [
   {
     id: 'e-commerce',
     title: 'E-commerce Premium',
-    description: 'Tiendas online de alto rendimiento con arquitecturas headless.',
-    longDescription: 'Diseñamos y desarrollamos experiencias de compra ultrarrápidas utilizando las últimas tecnologías en e-commerce. Nos enfocamos en la conversión, la escalabilidad y una experiencia de usuario sin fricciones.',
+    description:
+      'Tiendas online de alto rendimiento con arquitecturas headless.',
+    longDescription:
+      'Diseñamos y desarrollamos experiencias de compra ultrarrápidas utilizando las últimas tecnologías en e-commerce. Nos enfocamos en la conversión, la escalabilidad y una experiencia de usuario sin fricciones.',
     Icon: ShoppingBag,
     features: [
       'Arquitectura Headless (Next.js + Shopify/Medusa)',
@@ -35,8 +44,10 @@ export const servicesData: Service[] = [
   {
     id: 'apps-moviles',
     title: 'Apps Móviles',
-    description: 'Aplicaciones nativas y multiplataforma con diseño excepcional.',
-    longDescription: 'Creamos aplicaciones móviles que los usuarios aman. Desde apps para startups hasta soluciones enterprise, utilizamos React Native para entregar calidad nativa con eficiencia de desarrollo.',
+    description:
+      'Aplicaciones nativas y multiplataforma con diseño excepcional.',
+    longDescription:
+      'Creamos aplicaciones móviles que los usuarios aman. Desde apps para startups hasta soluciones enterprise, utilizamos React Native para entregar calidad nativa con eficiencia de desarrollo.',
     Icon: Tablet,
     features: [
       'Desarrollo con React Native / Expo',
@@ -55,8 +66,10 @@ export const servicesData: Service[] = [
   {
     id: 'api-microservicios',
     title: 'APIs & Microservicios',
-    description: 'Infraestructura robusta y escalable para conectar tus productos.',
-    longDescription: 'Construimos el cerebro de tu ecosistema digital. APIs RESTful y GraphQL diseñadas para la seguridad, el rendimiento y la facilidad de integración.',
+    description:
+      'Infraestructura robusta y escalable para conectar tus productos.',
+    longDescription:
+      'Construimos el cerebro de tu ecosistema digital. APIs RESTful y GraphQL diseñadas para la seguridad, el rendimiento y la facilidad de integración.',
     Icon: Cpu,
     features: [
       'Arquitectura de microservicios',
@@ -75,8 +88,10 @@ export const servicesData: Service[] = [
   {
     id: 'automatizacion',
     title: 'Automatización n8n',
-    description: 'Optimización de flujos de trabajo eliminando tareas manuales.',
-    longDescription: 'Conectamos tus herramientas de negocio (CRM, ERP, Slack, Gmail) mediante flujos de trabajo inteligentes en n8n, ahorrando cientos de horas de trabajo manual.',
+    description:
+      'Optimización de flujos de trabajo eliminando tareas manuales.',
+    longDescription:
+      'Conectamos tus herramientas de negocio (CRM, ERP, Slack, Gmail) mediante flujos de trabajo inteligentes en n8n, ahorrando cientos de horas de trabajo manual.',
     Icon: Zap,
     features: [
       'Diseño de workflows complejos en n8n',
@@ -95,8 +110,10 @@ export const servicesData: Service[] = [
   {
     id: 'agentes-ia',
     title: 'Agentes IA',
-    description: 'Inteligencia artificial aplicada para resolver problemas reales.',
-    longDescription: 'Implementamos agentes de IA basados en modelos avanzados (GPT-4, Claude) capaces de entender el contexto de tu negocio y tomar decisiones inteligentes de forma autónoma.',
+    description:
+      'Inteligencia artificial aplicada para resolver problemas reales.',
+    longDescription:
+      'Implementamos agentes de IA basados en modelos avanzados (GPT-4, Claude) capaces de entender el contexto de tu negocio y tomar decisiones inteligentes de forma autónoma.',
     Icon: BrainCircuit,
     features: [
       'Agentes de atención al cliente (RAG)',
@@ -112,4 +129,4 @@ export const servicesData: Service[] = [
     ],
     tech: ['OpenAI', 'LangChain', 'Pinecone', 'Python']
   }
-];
+]

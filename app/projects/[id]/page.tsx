@@ -1,19 +1,23 @@
-'use client';
+'use client'
 
-import React, { use } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import Link from 'next/link';
-import { projects } from '@/lib/projects-data';
-import { ArrowLeft, CheckCircle2, Cpu, Rocket, Shield } from 'lucide-react';
-import { notFound } from 'next/navigation';
+import React, { use } from 'react'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import Link from 'next/link'
+import { projects } from '@/lib/projects-data'
+import { ArrowLeft, CheckCircle2, Cpu, Rocket, Shield } from 'lucide-react'
+import { notFound } from 'next/navigation'
 
-export default function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params);
-  const project = projects.find(p => p.id === id);
+export default function ProjectDetail({
+  params
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = use(params)
+  const project = projects.find((p) => p.id === id)
 
   if (!project) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -23,23 +27,23 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-black overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={project.image} 
-            alt={project.title} 
+          <img
+            src={project.image}
+            alt={project.title}
             className="w-full h-full object-cover opacity-30 blur-sm"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Link 
-            href="/projects" 
+          <Link
+            href="/projects"
             className="inline-flex items-center text-gray-400 hover:text-white mb-8 transition-colors group"
           >
             <ArrowLeft className="mr-2 w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             Volver a Proyectos
           </Link>
-          
+
           <div className="max-w-4xl">
             <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">
               Caso de Éxito: {project.category}
@@ -52,7 +56,10 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
             </p>
             <div className="flex flex-wrap gap-3">
               {project.tech.map((t) => (
-                <span key={t} className="glass px-4 py-2 rounded-full text-sm font-semibold text-white">
+                <span
+                  key={t}
+                  className="glass px-4 py-2 rounded-full text-sm font-semibold text-white"
+                >
                   {t}
                 </span>
               ))}
@@ -102,14 +109,16 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
                   {project.results.map((result, idx) => (
                     <li key={idx} className="flex items-start space-x-4">
                       <CheckCircle2 className="w-6 h-6 text-green-500 mt-1 flex-shrink-0" />
-                      <span className="text-gray-300 font-medium">{result}</span>
+                      <span className="text-gray-300 font-medium">
+                        {result}
+                      </span>
                     </li>
                   ))}
                 </ul>
-                
+
                 <div className="mt-12 pt-8 border-t border-white/10">
-                  <Link 
-                    href="/#contact" 
+                  <Link
+                    href="/#contact"
                     className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-2xl flex items-center justify-center transition-all hover:scale-[1.02]"
                   >
                     ¿Quieres resultados así?
@@ -123,5 +132,5 @@ export default function ProjectDetail({ params }: { params: Promise<{ id: string
 
       <Footer />
     </main>
-  );
+  )
 }

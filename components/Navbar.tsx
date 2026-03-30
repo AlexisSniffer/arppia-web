@@ -1,31 +1,33 @@
-'use client';
+'use client'
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { Menu, X, Rocket } from 'lucide-react';
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { Menu, X, Rocket } from 'lucide-react'
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navLinks = [
     { name: 'Servicios', href: '/services' },
     { name: 'Proyectos', href: '/projects' },
     { name: 'Blog', href: '/blog' },
     { name: 'Sobre Nosotros', href: '/about' },
-    { name: 'Contacto', href: '/contact' },
-  ];
+    { name: 'Contacto', href: '/contact' }
+  ]
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-3' : 'bg-transparent py-5'}`}>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-3' : 'bg-transparent py-5'}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -33,7 +35,9 @@ const Navbar = () => {
               <div className="bg-primary p-2 rounded-lg">
                 <Rocket className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-bold tracking-tight text-white">Arppia</span>
+              <span className="text-2xl font-bold tracking-tight text-white">
+                Arppia
+              </span>
             </Link>
           </div>
 
@@ -91,7 +95,7 @@ const Navbar = () => {
         </div>
       )}
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
