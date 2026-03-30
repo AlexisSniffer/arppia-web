@@ -112,12 +112,16 @@ const Contact = ({
                     {result.message}
                   </p>
                   <div className="bg-white/5 border border-white/10 rounded-2xl p-6 w-full max-w-sm">
-                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2 font-bold">Tu número de ticket</p>
+                    <p className="text-xs text-gray-500 uppercase tracking-widest mb-2 font-bold">
+                      Tu número de ticket
+                    </p>
                     <div className="flex items-center justify-center space-x-3 mb-4">
                       <Ticket className="w-5 h-5 text-primary" />
-                      <span className="text-3xl font-mono font-black text-white">{result.ticketNumber}</span>
+                      <span className="text-3xl font-mono font-black text-white">
+                        {result.ticketNumber}
+                      </span>
                     </div>
-                    <Link 
+                    <Link
                       href={`/tickets?id=${result.ticketNumber}`}
                       className="block w-full bg-primary/20 hover:bg-primary/30 text-primary font-bold py-3 rounded-xl transition-all text-sm"
                     >

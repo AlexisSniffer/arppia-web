@@ -1,6 +1,6 @@
-'use server';
+'use server'
 
-import { supabase } from '@/lib/supabase';
+import { supabase } from '@/lib/supabase'
 
 export async function getTicketStatus(ticketS: string) {
   try {
@@ -9,10 +9,13 @@ export async function getTicketStatus(ticketS: string) {
       .from('contacts')
       .select('*')
       .eq('ticket', ticketS)
-      .single();
+      .single()
 
     if (ticketError || !ticket) {
-      return { success: false, error: 'Ticket no encontrado. Verifica el código e intenta de nuevo.' };
+      return {
+        success: false,
+        error: 'Ticket no encontrado. Verifica el código e intenta de nuevo.'
+      }
     }
 
     // 2. Fetch comments
@@ -20,20 +23,20 @@ export async function getTicketStatus(ticketS: string) {
       .from('contact_comments')
       .select('*')
       .eq('contact_id', ticket.id)
-      .order('created_at', { ascending: true });
+      .order('created_at', { ascending: true })
 
     if (commentsError) {
-      console.error('Comments error:', commentsError);
+      console.error('Comments error:', commentsError)
     }
 
-    return { 
-      success: true, 
-      ticket, 
-      comments: comments || [] 
-    };
+    return {
+      success: true,
+      ticket,
+      comments: comments || []
+    }
   } catch (err) {
-    console.error('Fetch error:', err);
-    return { success: false, error: 'Ocurrió un error al consultar el ticket.' };
+    console.error('Fetch error:', err)
+    return { success: false, error: 'Ocurrió un error al consultar el ticket.' }
   }
 }
 
@@ -46,14 +49,36 @@ export async function addTicketComment(contactId: number, comment: string) {
         author_role: 'user',
         comment: comment
       })
-      .select();
+      .select()
 
     if (error) {
-      return { success: false, error: 'Error al enviar el comentario.' };
+      return { success: false, error: 'Error al enviar el comentario.' }
     }
 
-    return { success: true, comment: data[0] };
+    return { success: true, comment: data[0] }
   } catch (err) {
-    return { success: false, error: 'Error de conexión.' };
+    return { success: false, error: 'Error de conexión.' }
+  }
+}
+
+export async function getTicketsByEmail(email: string) {
+  try {
+    const { data, error } = await supabase
+      .from('contacts')
+      .select('id, ticket, created_at, status, project_type')
+      .eq('email', email)
+      .order('created_at', { ascending: false })
+
+    if (error) {
+      console.error('Supabase error:', error)
+      return {
+        success: false,
+        error: 'Ocurrió un error al buscar los tickets.'
+      }
+    }
+
+    return { success: true, tickets: data || [] }
+  } catch (err) {
+    return { success: false, error: 'Error de conexión.' }
   }
 }
