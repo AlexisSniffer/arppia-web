@@ -80,7 +80,7 @@ const Navbar = () => {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden glass absolute top-full left-0 w-full p-4 space-y-4 shadow-2xl animate-in slide-in-from-top duration-300">
+        <div className="md:hidden bg-[#050505]/95 backdrop-blur-xl absolute top-full left-0 w-full p-6 space-y-4 shadow-2xl border-b border-white/10 animate-in slide-in-from-top duration-300">
           {navLinks.map((link) => (
             <Link
               key={link.name}
