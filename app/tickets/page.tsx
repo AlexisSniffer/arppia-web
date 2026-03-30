@@ -260,7 +260,7 @@ const TicketsPage = () => {
                   return (
                     <button
                       key={t.id}
-                      onClick={() => loadTicket(t.ticketS)}
+                      onClick={() => loadTicket(t.ticket)}
                       className="glass p-6 rounded-3xl border border-white/5 hover:border-primary/50 transition-all flex items-center justify-between group text-left w-full"
                     >
                       <div className="flex items-center gap-6">
