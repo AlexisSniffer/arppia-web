@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X, Rocket } from 'lucide-react'
+import Image from 'next/image'
+import { Menu, X } from 'lucide-react'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,13 +32,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="bg-primary p-2 rounded-lg">
-                <Rocket className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold tracking-tight text-white">
-                Arppia
-              </span>
+            <Link href="/" className="flex items-center">
+              <Image 
+                src="/logo.svg" 
+                alt="Arppia Logo" 
+                width={120} 
+                height={40} 
+                className="h-10 w-auto" 
+                priority 
+              />
             </Link>
           </div>
 

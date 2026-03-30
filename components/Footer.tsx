@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Rocket, Code, X, Globe, Mail, ArrowRight } from 'lucide-react'
 
 const Footer = () => {
@@ -13,13 +14,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="bg-primary p-1.5 rounded-lg">
-                <Rocket className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-white">
-                Arppia
-              </span>
+            <Link href="/" className="flex items-center">
+              <Image src="/logo.svg" alt="Arppia Logo" width={120} height={40} className="h-8 w-auto" />
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Transformamos la visión de tu empresa en realidades digitales
