@@ -23,16 +23,14 @@ export async function submitContactForm(formData: {
 
     const { data, error } = await supabase
       .from('contacts')
-      .insert([
-        {
-          name: formData.name,
-          email: formData.email,
-          project_type: formData.projectType,
-          message: formData.message,
-          ticket_number: ticketNumber,
-          status: 'pending'
-        }
-      ])
+      .insert({
+        name: formData.name,
+        email: formData.email,
+        project_type: formData.projectType,
+        message: formData.message,
+        ticket: ticketNumber,
+        status: 'pending'
+      })
       .select()
 
     if (error) {
