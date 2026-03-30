@@ -30,27 +30,25 @@ const ContactPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative h-[600px] rounded-[4rem] overflow-hidden glass p-1 border border-white/5">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.661109062024!2d-99.1678235!3d19.42702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6a3bc6c06a489704!2sÁngel%20de%20la%20Independencia!5e0!3m2!1ses!2smx!4v1711756000000!5m2!1ses!2smx"
-              className="w-full h-full rounded-[3.9rem] border-0 grayscale "
+              src="https://www.google.com/maps?q=19.42702,-99.1678235&z=15&output=embed"
+              className="w-full h-full rounded-[3.9rem] border-0 invert-[90%] hue-rotate-180 brightness-[0.7] contrast-[1.2]"
               allowFullScreen
               loading="lazy"
             ></iframe>
             <div className="absolute top-10 right-10 glass px-6 py-4 rounded-3xl border border-white/10 backdrop-blur-xl">
               <p className="text-white font-bold flex items-center gap-3">
                 <MapPin className="text-primary w-6 h-6 animate-pulse" />
-                <span>Sede Central: CDMX</span>
+                <span>Sede Central: Ciudad de Panama, Panama</span>
               </p>
             </div>
           </div>
         </div>
 
         {/* 3. Form Section - OVERLAPPING THE MAP */}
-        <div className="max-w-5xl mx-auto px-4 relative -mt-64 z-20">
-          <Contact
-            noPadding
-            showTitle={false}
-            className="bg-transparent shadow-none"
-          />
+        <div className="max-w-5xl mx-auto px-4 relative -mt-40 z-20">
+          <div className="bg-black/95 rounded-[3.5rem] shadow-2xl overflow-hidden ">
+            <Contact noPadding showTitle={false} />
+          </div>
         </div>
       </section>
 
