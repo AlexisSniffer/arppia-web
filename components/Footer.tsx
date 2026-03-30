@@ -123,13 +123,13 @@ const Footer = () => {
           </p>
           <div className="flex space-x-6">
             <Link
-              href="#"
+              href="/privacy"
               className="text-gray-500 hover:text-white text-xs transition-colors"
             >
               Privacidad
             </Link>
             <Link
-              href="#"
+              href="/terms"
               className="text-gray-500 hover:text-white text-xs transition-colors"
             >
               Términos
