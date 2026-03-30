@@ -14,8 +14,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center">
-              <Image src="/logo.svg" alt="Arppia Logo" width={120} height={40} className="h-8 w-auto" />
+            <Link href="/" className="flex items-center group space-x-2">
+              <Image
+                src="/logo.svg"
+                alt="Logo"
+                width={120}
+                height={40}
+                className="h-8 w-auto"
+              />
+              <span className="text-xl font-bold tracking-tight text-white">
+                Arppia
+              </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
               Transformamos la visión de tu empresa en realidades digitales
@@ -48,18 +57,18 @@ const Footer = () => {
             <h3 className="text-white font-bold mb-6">Servicios</h3>
             <ul className="space-y-4">
               {[
-                'E-commerce',
-                'Apps Móviles',
-                'APIs & Backend',
-                'Automatización n8n',
-                'Agentes IA'
-              ].map((item) => (
-                <li key={item}>
+                { name: 'E-commerce', id: 'e-commerce' },
+                { name: 'Apps Móviles', id: 'apps-moviles' },
+                { name: 'APIs & Backend', id: 'api-microservicios' },
+                { name: 'Automatización n8n', id: 'automatizacion' },
+                { name: 'Agentes IA', id: 'agentes-ia' }
+              ].map((service) => (
+                <li key={service.id}>
                   <Link
-                    href="#services"
+                    href={`/services/${service.id}`}
                     className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
-                    {item}
+                    {service.name}
                   </Link>
                 </li>
               ))}
@@ -71,18 +80,18 @@ const Footer = () => {
             <h3 className="text-white font-bold mb-6">Empresa</h3>
             <ul className="space-y-4">
               {[
-                'Sobre nosotros',
-                'Nuestro proceso',
-                'Portafolio',
-                'Blog',
-                'Contacto'
+                { name: 'Sobre nosotros', href: '/about' },
+                { name: 'Nuestro proceso', href: '/#process' },
+                { name: 'Portafolio', href: '/projects' },
+                { name: 'Blog', href: '/blog' },
+                { name: 'Contacto', href: '/contact' }
               ].map((item) => (
-                <li key={item}>
+                <li key={item.name}>
                   <Link
-                    href={item === 'Contacto' ? '#contact' : '#'}
+                    href={item.href}
                     className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}

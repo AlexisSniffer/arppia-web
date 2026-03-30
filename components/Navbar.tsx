@@ -32,15 +32,17 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <Image 
-                src="/logo.svg" 
-                alt="Arppia Logo" 
-                width={120} 
-                height={40} 
-                className="h-10 w-auto" 
-                priority 
+            <Link href="/" className="flex items-center group space-x-2">
+              <Image
+                src="/logo.svg"
+                alt="Logo"
+                width={120}
+                height={40}
+                className="h-8 w-auto"
               />
+              <span className="text-xl font-bold tracking-tight text-white">
+                Arppia
+              </span>
             </Link>
           </div>
 
