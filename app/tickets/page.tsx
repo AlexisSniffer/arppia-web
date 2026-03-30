@@ -3,20 +3,31 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useSearchParams } from 'next/navigation';
 import { Search, Ticket, Calendar, MessageSquare, Send, Loader2, CheckCircle2, Clock, Play } from 'lucide-react';
 import { getTicketStatus, addTicketComment } from '@/app/actions/tickets';
 
 const TicketsPage = () => {
-    const [ticketId, setTicketId] = useState('');
+    const searchParams = useSearchParams();
+    const initialId = searchParams.get('id') || '';
+    
+    const [ticketId, setTicketId] = useState(initialId);
     const [isSearching, setIsSearching] = useState(false);
     const [ticketData, setTicketData] = useState<any>(null);
     const [error, setError] = useState('');
     const [newComment, setNewComment] = useState('');
     const [isCommenting, setIsCommenting] = useState(false);
 
-    const handleSearch = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!ticketId.trim()) return;
+    React.useEffect(() => {
+        if (initialId) {
+            handleSearch(null as any);
+        }
+    }, [initialId]);
+
+    const handleSearch = async (e?: React.FormEvent) => {
+        if (e) e.preventDefault();
+        const idToSearch = ticketId || initialId;
+        if (!idToSearch.trim()) return;
         
         setIsSearching(true);
         setError('');

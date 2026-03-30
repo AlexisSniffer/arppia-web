@@ -84,7 +84,8 @@ const Footer = () => {
                 { name: 'Nuestro proceso', href: '/#process' },
                 { name: 'Portafolio', href: '/projects' },
                 { name: 'Blog', href: '/blog' },
-                { name: 'Contacto', href: '/contact' }
+                { name: 'Contacto', href: '/contact' },
+                { name: 'Mis Tickets', href: '/tickets' }
               ].map((item) => (
                 <li key={item.name}>
                   <Link

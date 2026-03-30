@@ -22,6 +22,7 @@ const Navbar = () => {
     { name: 'Proyectos', href: '/projects' },
     { name: 'Blog', href: '/blog' },
     { name: 'Sobre Nosotros', href: '/about' },
+    { name: 'Mis Tickets', href: '/tickets' },
     { name: 'Contacto', href: '/contact' }
   ]
 
