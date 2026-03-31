@@ -1,10 +1,10 @@
 'use client'
 
-import React from 'react'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
-import { Mail, MapPin, MessageCircle, X, Globe, Code } from 'lucide-react'
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
+import { Code, Globe, Mail, MapPin, MessageCircle, Ticket, X } from 'lucide-react'
+import Link from 'next/link'
 
 const ContactPage = () => {
   return (
@@ -61,7 +61,7 @@ const ContactPage = () => {
             </h2>
             <p className="text-gray-400">Elige la forma más cómoda para ti.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* WhatsApp */}
             <a
               href="https://wa.me/something"
@@ -87,6 +87,18 @@ const ContactPage = () => {
               </h3>
               <p className="text-gray-400 text-sm">hola@arppia.com</p>
             </a>
+
+            {/* Tickets */}
+            <Link
+              href="/tickets"
+              className="glass group p-8 rounded-[3rem] flex flex-col items-center text-center hover:bg-white/5 transition-all duration-500"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all">
+                <Ticket className="text-blue-500 w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Mis Tickets</h3>
+              <p className="text-gray-400 text-sm">Consulta el estado de tu pedido</p>
+            </Link>
 
             {/* Socials */}
             <div className="glass p-8 rounded-[3rem] flex flex-col items-center text-center">
