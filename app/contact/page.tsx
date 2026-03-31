@@ -3,7 +3,15 @@
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
-import { Code, Globe, Mail, MapPin, MessageCircle, Ticket, X } from 'lucide-react'
+import {
+  Code,
+  Globe,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Ticket,
+  X
+} from 'lucide-react'
 import Link from 'next/link'
 
 const ContactPage = () => {
@@ -30,8 +38,8 @@ const ContactPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative h-[600px] rounded-[4rem] overflow-hidden glass p-1 border border-white/5">
             <iframe
-              src="https://www.google.com/maps?q=19.42702,-99.1678235&z=15&output=embed"
-              className="w-full h-full rounded-[3.9rem] border-0 invert-[90%] hue-rotate-180 brightness-[0.7] contrast-[1.2]"
+              src="https://www.google.com/maps?q=8.998021,-79.533889&z=15&output=embed"
+              className="w-full h-full rounded-[3.9rem] border-0 invert-[90%] hue-rotate-180 contrast-[1.2]"
               allowFullScreen
               loading="lazy"
             ></iframe>
@@ -97,7 +105,9 @@ const ContactPage = () => {
                 <Ticket className="text-blue-500 w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Mis Tickets</h3>
-              <p className="text-gray-400 text-sm">Consulta el estado de tu pedido</p>
+              <p className="text-gray-400 text-sm">
+                Consulta el estado de tu pedido
+              </p>
             </Link>
 
             {/* Socials */}
